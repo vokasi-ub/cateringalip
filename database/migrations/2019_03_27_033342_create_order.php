@@ -20,7 +20,7 @@ class CreateOrder extends Migration
             $table->text('alamat');
             $table->string('jumlah');
             $table->date('tgl_order');
-            $table->datetime('tgl_ambil');
+            $table->string('tgl_ambil');
             $table->string('harga_satuan');
             $table->string('harga_total');
             $table->string('statustransaksi');

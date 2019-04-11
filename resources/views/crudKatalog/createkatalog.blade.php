@@ -16,10 +16,16 @@
           </div>
         </div>
 		<div class="box-body">
+        <div class="box-body">
             <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-tags"></i> ID Kategori </span>
-                    <input title="ID Kategori"type="text" name="idkatalog" autocomplete="off" required class="form-control">
-			</div><br>
+            <span class="input-group-addon"><i class="fa fa-tags"></i>Jenis Kategori </span>
+                  <select name="idkategori_fk" class="form-control">
+                      @foreach ($data as $row)
+                    <option   value="{{ $row->idkategori}}">{{ $row->jenis_kategori}}</option>
+                    @endforeach
+                  </select>
+                </div></div>
+
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-tags"></i> Nama Menu </span>
                     <input title="Nama Menu"type="text" name="namamenu" autocomplete="off" required class="form-control">

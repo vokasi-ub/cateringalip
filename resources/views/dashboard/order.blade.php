@@ -7,11 +7,11 @@
           <div class="box">
             <div class="box-header with-border">
               <h3 class="box-title">DATA ORDERAN</h3>
-              <form action="#" method="get" class="sidebar-form">
+              <form action=""  class="sidebar-form">
                   <div class="input-group">
-                    <input type="text" name="q" class="form-control" placeholder="Search...">
+                    <input type="text" name="keyword" class="form-control" placeholder="Search...">
                       <span class="input-group-btn">
-                      <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                      <button type="submit" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
                       </button>
                       </span>
                   </div>
@@ -26,6 +26,7 @@
                   <th>Atas Nama</th>
                   <th>No HP</th>
                   <th>Alamat</th>
+                  <th>Nama Menu</th>
                   <th>Jumlah</th>
                   <th>Tanggal Order</th>
                   <th>Tanggal Ambil</th>
@@ -42,6 +43,7 @@
                     <th>{{ $row->atasnama }}</th>
                     <th>{{ $row->nohp }}</th>
                     <th>{{ $row->alamat }}</th>
+                    <th>{{ $row->get_katalog->namamenu}}</th>
                     <th>{{ $row->jumlah }}</th>
                     <th>{{ $row->tgl_order }}</th>
                     <th>{{ $row->tgl_ambil }}</th>

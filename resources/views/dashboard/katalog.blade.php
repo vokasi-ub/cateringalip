@@ -7,11 +7,11 @@
           <div class="box">
             <div class="box-header with-border">
               <h3 class="box-title">KATALOG</h3>
-              <form action="#" method="get" class="sidebar-form">
+              <form action="" class="sidebar-form">
                   <div class="input-group">
-                    <input type="text" name="q" class="form-control" placeholder="Search...">
+                    <input type="text" name="keyword" class="form-control" placeholder="Search...">
                       <span class="input-group-btn">
-                      <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                      <button type="submit" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
                       </button>
                       </span>
                   </div>
@@ -23,6 +23,7 @@
               <table class="table table-bordered" style="width: auto">
                 <tr>
                   <th>ID Katalog</th>
+                  <th>Jenis Kategori</th>
                   <th>Nama Menu</th>
                   <th>Foto Menu</th>
                   <th>Deskripsi</th>
@@ -33,6 +34,7 @@
                 @foreach ($datakatalog as $row)
                 <tr>
                     <th>{{ $row->idkatalog }}</th>
+                    <th>{{ $row->get_kategori->jenis_kategori}}</th>
                     <th>{{ $row->namamenu}}</th>
                     <th>{{ $row->pict }}</th>
                     <th>{{ $row->deskripsi }}</th>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\modelOrder;
+use App\modelKatalog;
 
 class OrderController extends Controller
 {
@@ -15,12 +16,10 @@ class OrderController extends Controller
      */
     public function index(Request $request)
     {
-        //mendefinisikan kata kunci
-        $cari = $request->q;
-        //mencari data di database
-        $dataorder = DB::table('order')
-        ->where('atasnama','like',"%".$cari."%")
-        ->paginate();
+        //with mengambil fungsi dr model, when buat search
+        $dataorder = modelOrder::with(['get_katalog'])->when($request->keyword, function ($query) use ($request) {
+            $query->where('atasnama', 'like', "%{$request->keyword}%");
+            })->get();
         //return data ke view
         return view('dashboard.order', compact('dataorder'));
     }
@@ -32,7 +31,8 @@ class OrderController extends Controller
     public function create()
     {
         //
-        return view('crudorder.createorder');
+        $dataa = modelKatalog::all();
+        return view('crudorder.createorder', compact('dataa'));
     }
 
     /**
@@ -49,6 +49,7 @@ class OrderController extends Controller
             'atasnama' => $request->atasnama,
             'nohp' => $request->nohp,
             'alamat' => $request->alamat,
+            'idkatalog_fk' => $request->idkatalog_fk,
             'jumlah' => $request->jumlah,
             'tgl_order' => $request->tgl_order,
             'tgl_ambil' => $request->tgl_ambil,
@@ -69,7 +70,8 @@ class OrderController extends Controller
     public function show($id_order)
     {
         //
-        return view('crudorder.createorder');
+        $dataa = modelKatalog::all();
+        return view('crudorder.createorder', compact('dataa'));
     }
     /**
      * Show the form for editing the specified resource.
@@ -80,8 +82,9 @@ class OrderController extends Controller
     public function edit($id_order)
     {
         //
+        $dataaa = modelKatalog::all();
         $dataorder = DB::table('order')->where('id_order',$id_order)->get();
-        return view('crudorder.editorder', compact('dataorder'));
+        return view('crudorder.editorder', compact('dataorder','dataaa'));
     }
 
     /**
@@ -99,6 +102,7 @@ class OrderController extends Controller
             'atasnama' => $request->atasnama,
             'nohp' => $request->nohp,
             'alamat' => $request->alamat,
+            'idkatalog_fk' => $request->idkatalog_fk,
             'jumlah' => $request->jumlah,
             'tgl_order' => $request->tgl_order,
             'tgl_ambil' => $request->tgl_ambil,

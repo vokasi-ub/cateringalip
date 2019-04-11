@@ -8,5 +8,7 @@ class modelKategori extends Model
 {
     //
     protected $table = 'kategori';
+    protected $primaryKey = 'idkategori';
     protected $fillabel = ['idkategori','jenis_kategori'];
+
 }

@@ -17,11 +17,6 @@
         </div>
 		<div class="box-body">
 
-        <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-tags"></i> ID Kategori </span>
-                    <input title="ID Kategori"type="text" name="idkategori" autocomplete="off" required class="form-control">
-			</div><br>
-
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-tags"></i> Jenis Kategori </span>
                     <input title="Jenis Kategori"type="text" name="jenis_kategori" autocomplete="off" required class="form-control">

@@ -18,6 +18,7 @@ class CreateOrder extends Migration
             $table->string('atasnama');
             $table->string('nohp');
             $table->text('alamat');
+            $table->integer('idkatalog_fk');
             $table->string('jumlah');
             $table->date('tgl_order');
             $table->string('tgl_ambil');

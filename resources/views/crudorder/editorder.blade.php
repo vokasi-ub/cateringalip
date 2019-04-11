@@ -18,6 +18,15 @@
           </div>
         </div>
 		<div class="box-body">
+        <div class="box-body">
+            <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-tags"></i>Nama Menu </span>
+                  <select name="idkatalog_fk" class="form-control">
+                      @foreach ($dataaa as $row)
+                    <option   value="{{ $row->idkatalog}}">{{ $row->namamenu}}</option>
+                    @endforeach
+                  </select>
+                </div></div> 
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-tags"></i> Atas Nama </span>
                     <input title="Atas Nama"type="text" name="atasnama" autocomplete="off" required class="form-control" value="{{$row2->atasnama}}">

@@ -10,7 +10,7 @@
 	   <form action="{{ url('updatekatalog/'.$row2->idkatalog) }}" class="form-horizontal" method="post" enctype="multipart/form-data">
 	   {{ csrf_field() }}
         <div class="box-header with-border">
-          <h3 class="box-title"><i class="fa fa-tags"></i> Form edit data produk</h3>
+          <h3 class="box-title"><i class="fa fa-tags"></i> Form edit data Katalog</h3>
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
                     title="Collapse">
@@ -18,6 +18,15 @@
           </div>
         </div>
 		<div class="box-body">
+        <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-tags"></i> Jenis Kategori </span>
+                  <select name="idkategori_fk" class="form-control">
+                      @foreach ($jenis as $row)
+                    <option   value="{{ $row->idkategori}}">{{ $row->jenis_kategori}}</option>
+                    @endforeach
+                  </select>
+                </div><br>
+        
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-tags"></i> Nama Menu </span>
                     <input title="Nama Menu"type="text" name="namamenu" autocomplete="off" required class="form-control" value="{{$row2->namamenu}}">

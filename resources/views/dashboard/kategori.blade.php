@@ -30,7 +30,6 @@
                 @foreach ($datakategori as $row)
                 <tr>
             
-                    
                     <th>{{ $row->idkategori}}</th>
                     <th>{{ $row->jenis_kategori}}</th>
                     <th> 

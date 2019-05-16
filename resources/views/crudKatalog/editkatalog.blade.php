@@ -32,7 +32,7 @@
                     <input title="Nama Menu"type="text" name="namamenu" autocomplete="off" required class="form-control" value="{{$row2->namamenu}}">
 			</div><br>
             <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-tags"></i>Picture</span>
+                <span class="input-group-addon"><i class="fa fa-tags"></i>Bentuk</span>
                     <input title="Picture"type="text" name="pict" autocomplete="off" required class="form-control" value="{{$row2->pict}}">
 			</div><br>
             <div class="input-group">

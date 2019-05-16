@@ -44,7 +44,7 @@ class OrderController extends Controller
     public function store(Request $request)
     {
         //
-        DB::table('order')->insert([
+        modelOrder::insert([
             'id_order' => $request->id_order,
             'atasnama' => $request->atasnama,
             'nohp' => $request->nohp,
@@ -83,7 +83,7 @@ class OrderController extends Controller
     {
         //
         $dataaa = modelKatalog::all();
-        $dataorder = DB::table('order')->where('id_order',$id_order)->get();
+        $dataorder = modelOrder::where('id_order',$id_order)->get();
         return view('crudorder.editorder', compact('dataorder','dataaa'));
     }
 
@@ -97,7 +97,7 @@ class OrderController extends Controller
     public function update(Request $request, $id_order)
     {
         //
-        DB::table('order')->where('id_order',$id_order)->update([
+        modelOrder::where('id_order',$id_order)->update([
             'id_order' => $request->id_order,
             'atasnama' => $request->atasnama,
             'nohp' => $request->nohp,
@@ -122,7 +122,7 @@ class OrderController extends Controller
     public function destroy($id_order)
     {
         //
-        DB::table('order')->where('id_order', $id_order)->delete();
+       modelOrder::where('id_order', $id_order)->delete();
         return redirect('order');
     }
 }

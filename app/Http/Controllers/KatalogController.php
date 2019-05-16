@@ -52,7 +52,7 @@ class KatalogController extends Controller
     public function store(Request $request)
     {
         //
-        DB::table('katalog')->insert([
+        modelKatalog::insert([
             'idkatalog' => $request->idkatalog,
             'idkategori_fk' => $request->idkategori_fk, 
             'namamenu' => $request->namamenu,
@@ -88,7 +88,7 @@ class KatalogController extends Controller
     {
         //
         $jenis = modelKategori::all();
-        $datakatalog = DB::table('katalog')->where('idkatalog',$idkatalog)->get();
+        $datakatalog = modelKatalog::where('idkatalog',$idkatalog)->get();
         return view('crudkatalog.editkatalog', compact('datakatalog','jenis'));
     }
 
@@ -102,7 +102,7 @@ class KatalogController extends Controller
     public function update(Request $request, $idkatalog)
     {
         //
-        DB::table('katalog')->where('idkatalog',$idkatalog)->update([
+        modelKatalog::where('idkatalog',$idkatalog)->update([
            
             'idkatalog' => $request->idkatalog,
             'idkategori_fk' => $request->idkategori_fk,
@@ -123,7 +123,7 @@ class KatalogController extends Controller
     public function destroy($idkatalog)
     {
         //
-        DB::table('katalog')->where('idkatalog', $idkatalog)->delete();
+       modelKatalog::where('idkatalog', $idkatalog)->delete();
         return redirect('katalog');
     }
 }

@@ -25,7 +25,7 @@
                   <th>ID Katalog</th>
                   <th>Jenis Kategori</th>
                   <th>Nama Menu</th>
-                  <th>Foto Menu</th>
+                  <th>Bentuk</th>
                   <th>Deskripsi</th>
                   <th>Harga</th>
                   <th>Options</th>
